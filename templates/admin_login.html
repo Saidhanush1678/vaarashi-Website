@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Admin Login | Vaaraahi{% endblock %}
+{% block content %}
+<section class="admin-login-section"><form class="booking-form admin-login-card" method="post"><span class="eyebrow">VAARAAHI MANAGEMENT</span><h1>Admin <em>sign in.</em></h1><p>Manage customer orders, service prices and pickup progress.</p><label>Username<input name="username" required autocomplete="username" placeholder="Admin username"></label><label>Password<input name="password" type="password" required autocomplete="current-password" placeholder="Admin password"></label><button class="btn btn-dark btn-wide" type="submit">Sign in securely →</button><small class="fine-print">For local setup, configure ADMIN_USERNAME and ADMIN_PASSWORD before using this publicly.</small></form></section>
+{% endblock %}

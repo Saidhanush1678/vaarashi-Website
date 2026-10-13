@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Our Services | Vaaraahi{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="container"><span class="eyebrow">THE CARE MENU</span><h1>Thoughtful care for <em>every fabric.</em></h1><p>Choose the service you need. Final pricing is confirmed after garment inspection where required.</p></div></section>
+<section class="section section-light"><div class="container service-grid full-service-grid">
+{% for service in services %}<article class="service-card"><div class="service-number">{{ "%02d"|format(loop.index) }}</div><div class="service-icon">✦</div><h3>{{ service.name }}</h3><p>{{ service.description }}</p><div class="service-price">{% if service.price > 0 %}₹{{ "%.2f"|format(service.price) }} <small>{{ service.unit }}</small>{% else %}<small>Price confirmed by our team</small>{% endif %}</div><a href="{{ url_for('order', service=service.id) }}">Request this service <span>↗</span></a></article>{% endfor %}
+</div><p class="container fine-print">Prices and availability may vary by fabric, garment condition and treatment requirements. Please do not assume all stains or fabrics can be treated.</p></section>
+{% endblock %}
